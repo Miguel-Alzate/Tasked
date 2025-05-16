@@ -1,0 +1,59 @@
+.featureCard {
+    background: rgba(20, 25, 31, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 2.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.featureCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-color: rgba(138, 83, 255, 0.3);
+}
+
+.featureCard:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(138, 83, 255, 0.05), rgba(224, 71, 92, 0.05));
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.featureCard:hover:before {
+    opacity: 1;
+}
+
+.featureIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.featureCard h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.featureCard p {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+}

@@ -85,7 +85,7 @@ CREATE TABLE group_members (
 );
 
 INSERT INTO modules (module_id, module_name, module_description) VALUES
-("1e3f0b47-9b8e-4320-b7f5-7c74e89c2c6a", 'User Management', 'Manage users and their roles'),
+("1e3f0b47-9b8e-4320-b7f5-7c74e89c2c6h", 'User Management', 'Manage users and their roles'),
 ("7bdb9c6e-2e5b-4fa9-a663-837f7d69db28", 'Task Management', 'Manage tasks and their assignments'),
 ("c234f105-fbfa-489e-9f43-1fd8cf2ea5f3", 'Role Management', 'Manage roles and permissions'),
 ("f07c0cf1-8cf5-4ff2-b7b7-4b1ff4b6f8c3", 'Permission Management', 'Manage permissions for each role');
@@ -96,9 +96,9 @@ INSERT INTO roles (role_id, role_name, role_description) VALUES
 ("11f94b9b-54e6-4269-b3b0-7270f2783a8f", 'Employee', 'Employee with basic access');
 
 INSERT INTO permissions (module_id, role_id, p_insert, p_view, p_update, p_delete) VALUES
-("1e3f0b47-9b8e-4320-b7f5-7c74e89c2c6a", "5f09c5ea-b4c4-45ed-8f4a-5901d99be72e", 1, 1, 1, 1),
-("1e3f0b47-9b8e-4320-b7f5-7c74e89c2c6a", "d2a39a1d-5244-4e8d-bc92-26fd13d59235", 0, 1, 0, 0),
-("1e3f0b47-9b8e-4320-b7f5-7c74e89c2c6a", "11f94b9b-54e6-4269-b3b0-7270f2783a8f", 0, 0, 0, 0),
+("1e3f0b47-9b8e-4320-b7f5-7c74e89c2c6h", "5f09c5ea-b4c4-45ed-8f4a-5901d99be72e", 1, 1, 1, 1),
+("1e3f0b47-9b8e-4320-b7f5-7c74e89c2c6h", "d2a39a1d-5244-4e8d-bc92-26fd13d59235", 0, 1, 0, 0),
+("1e3f0b47-9b8e-4320-b7f5-7c74e89c2c6h", "11f94b9b-54e6-4269-b3b0-7270f2783a8f", 0, 0, 0, 0),
 ("7bdb9c6e-2e5b-4fa9-a663-837f7d69db28", "5f09c5ea-b4c4-45ed-8f4a-5901d99be72e", 1, 1, 1, 1),
 ("7bdb9c6e-2e5b-4fa9-a663-837f7d69db28", "d2a39a1d-5244-4e8d-bc92-26fd13d59235", 1, 1, 1, 1),
 ("7bdb9c6e-2e5b-4fa9-a663-837f7d69db28", "11f94b9b-54e6-4269-b3b0-7270f2783a8f", 0, 1, 1, 0),
