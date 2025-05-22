@@ -1,7 +1,7 @@
-const mysql = require('mysql2/promise');
+const { Pool } = require('pg');
 const settings = require('../../core/config');
 
-const pool = mysql.createPool({
+const pool = new Pool({
     host: settings.DB_HOST,
     user: settings.DB_USER,
     password: settings.DB_PASSWORD,
@@ -11,9 +11,9 @@ const pool = mysql.createPool({
 
 async function testConnection() {
     try {
-        const connection = await pool.getConnection();
-        console.log('Conexión a la base de datos exitosa');	
-        connection.release();
+        const client = await pool.connect();
+        console.log('Conexión a la base de datos PostgreSQL exitosa');
+        client.release();
         return true;
     } catch (error) {
         console.error('Fallo al conectar la base de datos:', error);
