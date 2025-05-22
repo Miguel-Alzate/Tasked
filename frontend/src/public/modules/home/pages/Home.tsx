@@ -1,28 +1,11 @@
 import React from 'react';
-import Navbar from '../../components/Navbar/Navbar.tsx';
-import Hero from '../../components/Hero/Hero.tsx';
-import BackgroundAnimation from '../../components/BackgroundAnimation/BackgroundAnimation.tsx';
-import Features from '../../components/Features/Features.tsx';
-import Testimonials from '../../components/Testimonials/Testimonials.tsx';
-import CtaSection from '../../components/CtaSection/CtaSection.tsx';
-import Footer from '../../components/Footer/Footer.tsx';
+import Navbar from '../../home/components/Navbar/Navbar.tsx';
+import Hero from '../../home/components/Hero/Hero.tsx';
+import BackgroundAnimation from '../../home/components/BackgroundAnimation/BackgroundAnimation.tsx';
+import Features from '../../home/components/Features/Features.tsx';
+import CtaSection from '../../home/components/CtaSection/CtaSection.tsx';
+import Footer from '../../home/components/Footer/Footer.tsx';
 import styles from './Home.module.css';
-
-// Ejemplo de props para Testimonials
-const testimonialsData = [
-  {
-    content: "¡Esta app me ayudó a organizar mi día a día!",
-    authorName: "Juan Pérez",
-    authorRole: "Desarrollador",
-    authorImage: "https://randomuser.me/api/portraits/men/1.jpg"
-  },
-  {
-    content: "La mejor herramienta para equipos remotos.",
-    authorName: "Ana Gómez",
-    authorRole: "Project Manager",
-    authorImage: "https://randomuser.me/api/portraits/women/2.jpg"
-  }
-];
 
 // Ejemplo de props para CtaSection
 const ctaProps = {
@@ -41,7 +24,8 @@ const footerProps = {
       title: "Producto",
       links: [
         { text: "Características", url: "#" },
-        { text: "Precios", url: "#" }
+        { text: "Tutorial", url: "#" },
+        { text: "Empezar ahora", url: "#" }
       ]
     },
     {
@@ -50,11 +34,20 @@ const footerProps = {
         { text: "Sobre nosotros", url: "#" },
         { text: "Contacto", url: "#" }
       ]
+    },
+    {
+      title: "lorem",
+      links: [
+        { text: "lorem", url: "#" },
+        { text: "lorem", url: "#" }
+      ]
     }
   ],
   socialLinks: [
     { name: "Twitter", url: "https://twitter.com", icon: <span>🐦</span> },
-    { name: "LinkedIn", url: "https://linkedin.com", icon: <span>💼</span> }
+    { name: "LinkedIn", url: "https://linkedin.com", icon: <span>💼</span> },
+    { name: "Github", url: "https://github.com", icon: <span>🐙</span> },
+    { name: "Instagram", url: "https://instagram.com", icon: <span>📸</span> }
   ],
   copyrightText: "© 2025 Tasked. Todos los derechos reservados."
 };
@@ -66,11 +59,6 @@ const Home: React.FC = () => {
       <Hero />
       <BackgroundAnimation />
       <Features />
-      <Testimonials 
-        title="Testimonios"
-        subtitle="Lo que dicen nuestros usuarios"
-        testimonials={testimonialsData}
-      />
       <CtaSection 
         title={ctaProps.title}
         description={ctaProps.description}

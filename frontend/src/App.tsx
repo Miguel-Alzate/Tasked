@@ -1,11 +1,13 @@
 import './App.css'
-import Home from './public/modules/home/pages/Home/Home.tsx'
+import { BrowserRouter } from 'react-router-dom';
+import AppRoutes from './routes/AppRoutes';
+
 function App() {
   return (
-    <>
-      <Home />
-    </>
-  )
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
+  );
 }
 
 export default App

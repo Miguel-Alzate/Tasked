@@ -2,6 +2,7 @@
     padding: 5rem 10%;
     position: relative;
     z-index: 2;
+    background: #000000;
 }
 
 .sectionTitle {
@@ -28,7 +29,7 @@
 }
 
 .sectionTitle p {
-    font-size: 1.1rem;
+    font-size: 1.6rem;
     max-width: 600px;
     margin: 0 auto;
     color: rgba(255, 255, 255, 0.7);

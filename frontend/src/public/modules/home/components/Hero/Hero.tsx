@@ -8,7 +8,7 @@ const Hero: React.FC = () => {
         <p>Tasked te ayuda a priorizar tareas, administrar flujos de trabajo y aumentar tu productividad con una interfaz intuitiva y potentes herramientas.</p>
         <div className={styles.ctaButtons}>
             <button className={styles.primaryBtn}>Comenzar gratis</button>
-            <button className={styles.secondaryBtn}>Ver demo</button>
+            <button className={styles.secondaryBtn}>Ver tutorial</button>
         </div>
         </section>
     );

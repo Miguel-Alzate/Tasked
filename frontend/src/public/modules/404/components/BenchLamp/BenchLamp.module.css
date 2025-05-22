@@ -1,0 +1,49 @@
+.svgimg {
+    position: absolute;
+    bottom: 0;
+    padding-top: 10vh;
+    padding-left: 1vh;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.benchLegs {
+    fill: #0C0E10;
+}
+
+.topBench,
+.bottomBench {
+    stroke: #0C0E10;
+    stroke-width: 1px;
+    fill: #5B3E2B;
+}
+
+.bottomBench path:nth-child(1) {
+    fill: #472f21;
+}
+
+.lampDetails {
+    fill: #202425;
+}
+
+.lampAccent {
+    fill: #2a2e2f;
+}
+
+.lampBottom {
+    fill: linear-gradient(#202425, #0C0E10);
+}
+
+.lampLight {
+    fill: #EFEFEF;
+}
+
+.lampGlow {
+  /* Styles are applied via the fill attribute in the component */
+}
+
+@media (max-width: 770px) {
+    .svgimg {
+        padding: 0;
+    }
+}

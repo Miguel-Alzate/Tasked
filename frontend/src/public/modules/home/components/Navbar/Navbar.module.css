@@ -2,21 +2,23 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 10%;
+    padding: 1rem 8%;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 100;
     transition: all 0.3s ease;
-    background: rgba(12, 14, 16, 0.8);
+    background: rgba(12, 14, 15, 0.678);
     backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .navbar.scrolled {
-    padding: 1rem 10%;
+    padding: 0.8rem 8%;
     background: rgba(12, 14, 16, 0.95);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .logo {
@@ -27,20 +29,37 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     letter-spacing: -1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.navCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    margin-left: 3rem;
 }
 
 .navLinks {
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem;
+    align-items: center;
+    margin-left: 4rem;
 }
 
 .navLinks a {
-    color: #fefefe;
+    color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
     font-size: 0.95rem;
     font-weight: 500;
     position: relative;
     transition: all 0.3s ease;
+    padding: 0.5rem 0;
 }
 
 .navLinks a:after {
@@ -48,50 +67,169 @@
     position: absolute;
     width: 0;
     height: 2px;
-    bottom: -4px;
-    left: 0;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
     background: linear-gradient(90deg, #8A53FF, #e0475c);
     transition: width 0.3s ease;
 }
 
 .navLinks a:hover {
     color: #fff;
+    transform: translateY(-1px);
 }
 
 .navLinks a:hover:after {
     width: 100%;
 }
 
+.authButtons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
 .loginBtn {
-    padding: 0.6rem 1.6rem;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0.6rem 1.4rem;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 8px;
-    color: #fff;
+    color: rgba(255, 255, 255, 0.9);
     font-weight: 500;
+    font-size: 0.9rem;
     cursor: pointer;
     transition: all 0.3s ease;
     backdrop-filter: blur(5px);
 }
 
 .loginBtn:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+.registerBtn {
+    padding: 0.6rem 1.4rem;
+    background: linear-gradient(135deg, #8A53FF, #e0475c);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.registerBtn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.registerBtn:hover::before {
+    left: 100%;
+}
+
+.registerBtn:hover {
     transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(138, 83, 255, 0.3);
+}
+
+.mobileMenu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.mobileMenu span {
+    width: 24px;
+    height: 2px;
+    background: #fff;
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 2px;
 }
 
 /* Media Queries */
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
     .navbar {
-        padding: 1.2rem 5%;
+        padding: 1rem 6%;
     }
     
     .navbar.scrolled {
-        padding: 0.8rem 5%;
+        padding: 0.8rem 6%;
+    }
+    
+    .navLinks {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar {
+        padding: 1rem 4%;
+    }
+    
+    .navbar.scrolled {
+        padding: 0.7rem 4%;
+    }
+    
+    .navLinks {
+        gap: 1.5rem;
+    }
+    
+    .navLinks a {
+        font-size: 0.9rem;
+    }
+    
+    .authButtons {
+        gap: 0.8rem;
+    }
+    
+    .loginBtn,
+    .registerBtn {
+        padding: 0.5rem 1.2rem;
+        font-size: 0.85rem;
     }
 }
 
 @media (max-width: 768px) {
-    .navLinks {
+    .navCenter {
         display: none;
+    }
+    
+    .authButtons {
+        display: none;
+    }
+    
+    .mobileMenu {
+        display: flex;
+    }
+    
+    .navbar {
+        padding: 1rem 4%;
+    }
+    
+    .navbar.scrolled {
+        padding: 0.8rem 4%;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 1rem 3%;
+    }
+    
+    .logo {
+        font-size: 1.5rem;
     }
 }
