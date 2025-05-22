@@ -13,7 +13,7 @@ app.use(express.json());
 // Swagger UI
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
-// Rutas
+// Routes
 app.use('/api/v1/auth', authRoutes);
 
 app.get('/', (req, res) => {
@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
   });
 });
 
-// Configuración del puerto
+//  Port config
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running`);

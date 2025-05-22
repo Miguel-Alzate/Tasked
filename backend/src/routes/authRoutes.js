@@ -7,7 +7,7 @@ const router = express.Router();
  * @swagger
  * /auth/login:
  *   post:
- *     summary: Iniciar sesión
+ *     summary: Log in
  *     tags: [Auth]
  *     requestBody:
  *       required: true
@@ -18,13 +18,13 @@ const router = express.Router();
  *             properties:
  *               email:
  *                 type: string
- *                 description: Correo electrónico
+ *                 description: Email address
  *               password:
  *                 type: string
- *                 description: Contraseña del usuario
+ *                 description: User password
  *     responses:
  *       200:
- *         description: Inicio de sesión exitoso
+ *         description: Successful login
  *         content:
  *           application/json:
  *             schema:
@@ -36,7 +36,7 @@ const router = express.Router();
  *                   type: string
  *                 token:
  *                   type: string
- *                   description: Token JWT para autenticación
+ *                   description: JWT token for authentication
  *                 user:
  *                   type: object
  *                   properties:
@@ -47,11 +47,13 @@ const router = express.Router();
  *                     email:
  *                       type: string
  *                     role_id:
- *                       type: integer
+ *                       type: string
  *       401:
- *         description: Credenciales inválidas
+ *         description: Invalid credentials
+ *       402:
+ *        description: Missing required fields
  *       500:
- *         description: Error en el servidor
+ *         description: Server error
  */
 router.post('/login', AuthController.login);
 
@@ -59,7 +61,7 @@ router.post('/login', AuthController.login);
  * @swagger
  * /auth/register:
  *   post:
- *     summary: Registrar un nuevo usuario
+ *     summary: Register a new user
  *     tags: [Auth]
  *     requestBody:
  *       required: true
@@ -72,15 +74,13 @@ router.post('/login', AuthController.login);
  *                 type: string
  *               email:
  *                 type: string
- *               password:
- *                 type: string
  *     responses:
  *       201:
- *         description: Usuario registrado exitosamente
- *       400:
- *         description: Error al registrar usuario
+ *         description: User registered successfully
+ *       422:
+ *         description: Missing required fields
  *       500:
- *         description: Error en el servidor
+ *         description: Server error
  */
 router.post('/register', AuthController.register);
 
